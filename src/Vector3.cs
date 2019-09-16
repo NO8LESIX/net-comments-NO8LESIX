@@ -46,6 +46,19 @@ namespace VectorMath
             this.X = x;
             this.Y = y;
             this.Z = z;
+        }/// <summary>
+        /// Gets the magnitude of the vector
+        /// </summary>
+        public double Magnitude => Math.Sqrt(this.X + this.Y + this.Z);
+        /// <summary>
+        /// Returns the cross product of this vector and another vector
+        /// </summary>
+        /// <param name="other">The other vector with three components of value double</param>
+        /// <returns>Returns the resulting vector three of this and the other vector</returns>
+        public Vector3 CrossProduct(Vector3 other)
+        {
+            return (new Vector3(this.Y * other.Z - this.Z * other.Y, this.Z * other.X - this.X * other.Z, this.X * other.Y - this.Y * other.X));
         }
+
     }
 }
